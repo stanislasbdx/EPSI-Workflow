@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #191919;
+    color: #F7F7F7;
+}
+
+section {
+    min-height: 200px;
+}
+
+section:nth-child(odd) {
+    background-color: #3c3c3c;
+}
+
+section>div {
+    height: 200px;
+}
+
+.row {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.blue {
+    background-color: steelblue;
+}
+
+.gold {
+    background-color: gold;
+}
+
+.red {
+    background-color: firebrick;
+}
+
+.green {
+    background-color: darkolivegreen;
+}
