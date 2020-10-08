@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>MON PREMIER COURS DE HTML AU EPSI</title>
+</head>
+
+<body>
+	<span id="titlesss"></span>
+
+	<ul>
+		<li>C'est ma liste à puce un peu 1</li>
+		<li>C'est ma liste à puce un peu 2</li>
+		<li>C'est ma liste à puce un peu 3</li>
+	</ul>
+
+	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore amet fuga, a maxime ipsam impedit quidem quia inventore optio ad atque odio cumque autem eius corrupti fugit! Assumenda, obcaecati molestias.</p>
+
+	<ul>
+		<ol>C'est ma liste sans puce 1</ol>
+		<ol>C'est ma liste sans puce 2</ol>
+		<ol>C'est ma liste sans puce 3</ol>
+	</ul>
+
+
+	<div>
+		<label for="pr">VOTRE PRENOM SIL VOUS PLAIT</label>
+		<input placeholder="ICI" id="pr" type="text"/>
+		<input placeholder="num" id="nu" type="number"/>
+		<input placeholder="pass" id="pp" type="password"/>
+		<input placeholder="color" id="co" type="color" />
+		<input placeholder="date" id="da" type="date"/>
+	</div>
+
+	<table>
+		<thead>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Taille</th>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Domi</th>
+				<th>AHAH</th>
+				<th>4</th>
+			</tr>
+		</tbody>
+	</table>
+
+
+</body>
+
+<script>
+	for(i=1 ; i<7 ; i++){
+		var tag = document.createElement(`h${i}`);
+
+		var text = document.createTextNode(`Mon titre en H${i}`);
+
+		tag.appendChild(text);
+
+		document.getElementById("titlesss").appendChild(tag);
+	}
+</script>
+
+</html>
