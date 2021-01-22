@@ -49,9 +49,9 @@ aside {
 }
 
 main {
- background-color: #fcfcfc;
- width: 80%;
- height: 80vh;
+    background-color: #fcfcfc;
+    width: 80%;
+    height: 80vh;
 }
 
 footer {
@@ -73,6 +73,11 @@ footer a {
     color: #34495e;
 }
 
+.card>h4>a {
+    text-decoration: none;
+    color: #34495e;
+}
+
 #header-section {
     width: 100%;
     display: flex;
@@ -90,4 +95,11 @@ footer a {
 
 #header-section>aside:nth-child(1) {
     background-color: #e6e6e6;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    padding: 2px 16px;
+    margin: 20px 50px 0px 50px;
 }
