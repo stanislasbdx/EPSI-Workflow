@@ -1,0 +1,99 @@
+body {
+	background: rgb(238, 174, 202);
+	background: linear-gradient(145deg, rgba(238, 174, 202, 1) 30%, rgba(148, 187, 233, 1) 100%);
+}
+
+.customContainer {
+	margin: 0 20px 0 20px;
+}
+
+.sections {
+	padding: 10px 0 10px 0;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-color--warning {
+	color: #fb6340;
+}
+.text-color--success {
+	color: #2dce89;
+}
+
+.sameHeight {
+	width: 100%;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-around;
+}
+
+/* Navbar */
+nav {
+	margin: 6vh 0 6vh 0;
+
+	text-align: center;
+}
+nav ul {
+	margin: auto;
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul li {
+	display: inline;
+}
+
+/* My little elements in glassmorph */
+.cardmorphism {
+	background: rgba(255, 255, 255, 0.30);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+
+	padding: 20px;
+	margin: 10px 0 10px 0;
+}
+
+.btnmorphism {
+	background: rgba(255, 255, 255, 0.50);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+
+	padding: 20px;
+	margin: 0 1vw 0 1vw;
+}
+.btnmorphism a {
+	text-decoration: none;
+	color: black;
+}
+
+.btnmorphism.active {
+	background: rgba(255, 255, 255, 0.85);
+}
+
+/* Custom header with woobly curvy things **/
+.custom-shape-divider-top {
+	position: absolute;
+	top: 179px;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.custom-shape-divider-top svg {
+	position: relative;
+	display: block;
+	width: calc(100% + 1.3px);
+	height: 180px;
+}
+
+.custom-shape-divider-top .shape-fill {
+	fill: #fff;
+}
