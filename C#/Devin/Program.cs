@@ -2,13 +2,13 @@
 
 namespace Devin
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var maxGuess = 100;
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			var maxGuess = 100;
 			var guess = 50;
-			
+
 			var reponse = "";
 			var game = true;
 
@@ -18,7 +18,7 @@ namespace Devin
 			{
 				Console.WriteLine($"Est-ce {guess} (=), moins que {guess} (< ou -) ou plus que {guess} (> ou +) ?");
 				reponse = Console.ReadLine();
-				
+
 				switch (reponse)
 				{
 					case ">":
@@ -38,6 +38,6 @@ namespace Devin
 						break;
 				}
 			}
-        }
-    }
+		}
+	}
 }

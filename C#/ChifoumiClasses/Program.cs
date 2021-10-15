@@ -4,7 +4,7 @@ namespace Chifoumi
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			int[] score = new int[] { 0, 0 };
 			string[] options = new string[] { "PIERRE", "PAPIER", "CISEAUX" };
@@ -17,8 +17,6 @@ namespace Chifoumi
                 Pierre  =  Pierre > draw  | Papier > ia   | Ciseaux > user
                 Papier  =  Pierre > user  | Papier > draw | Ciseaux > ia
                 Ciseaux =  Pierre > ia    | Papier > user | Ciseaux > draw
-
-                Win = 1 | Loose = 0 | Draw = 2
             **/
 
 			string[][] fight = new string[][]{
@@ -35,8 +33,8 @@ namespace Chifoumi
 				var n = hasard.Next(3);
 
 				Console.WriteLine("Faites votre choix (pierre, papier, ciseaux) :");
-				var userChoice = Console.ReadLine().ToUpper();
 
+				var userChoice = Console.ReadLine().ToUpper();
 				int userIndex = Array.IndexOf(options, userChoice);
 				int computerIndex = n;
 
@@ -56,8 +54,8 @@ namespace Chifoumi
 				Console.WriteLine($"Vous avez {score[0]} points, j'ai {score[1]} points.");
 			}
 
-            if(score[0] == 3)
-            {
+			if (score[0] == 3)
+			{
 				Console.WriteLine($"Vous avez gagné ! Il me manquait {3 - score[1]} point(s) pour gagner.");
 			}
 			else if (score[1] == 3)

@@ -33,7 +33,7 @@ namespace Chifoumi
 				var n = hasard.Next(3);
 
 				Console.WriteLine("Faites votre choix (pierre, papier, ciseaux) :");
-				
+
 				var userChoice = Console.ReadLine().ToUpper();
 				int userIndex = Array.IndexOf(options, userChoice);
 				int computerIndex = n;
@@ -54,8 +54,8 @@ namespace Chifoumi
 				Console.WriteLine($"Vous avez {score[0]} points, j'ai {score[1]} points.");
 			}
 
-            if(score[0] == 3)
-            {
+			if (score[0] == 3)
+			{
 				Console.WriteLine($"Vous avez gagné ! Il me manquait {3 - score[1]} point(s) pour gagner.");
 			}
 			else if (score[1] == 3)
