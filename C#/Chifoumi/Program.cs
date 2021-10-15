@@ -4,7 +4,7 @@ namespace Chifoumi
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			int[] score = new int[] { 0, 0 };
 			string[] options = new string[] { "PIERRE", "PAPIER", "CISEAUX" };
