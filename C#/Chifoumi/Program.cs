@@ -17,8 +17,6 @@ namespace Chifoumi
                 Pierre  =  Pierre > draw  | Papier > ia   | Ciseaux > user
                 Papier  =  Pierre > user  | Papier > draw | Ciseaux > ia
                 Ciseaux =  Pierre > ia    | Papier > user | Ciseaux > draw
-
-                Win = 1 | Loose = 0 | Draw = 2
             **/
 
 			string[][] fight = new string[][]{
@@ -35,8 +33,8 @@ namespace Chifoumi
 				var n = hasard.Next(3);
 
 				Console.WriteLine("Faites votre choix (pierre, papier, ciseaux) :");
+				
 				var userChoice = Console.ReadLine().ToUpper();
-
 				int userIndex = Array.IndexOf(options, userChoice);
 				int computerIndex = n;
 
