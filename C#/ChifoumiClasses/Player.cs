@@ -1,27 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChifoumiClasses
 {
     public class Player
     {
-		private int score;
+		private int _score;
 
 		public Player()
         {
-            score = 0;
+            _score = 0;
         }
         
-        public int getScore
+        public int score
         {
-            get => score;
+            get => _score;
         }
-		public void setScore(int newScore)
+		public void addScore(int newScore)
         {
-            score = newScore;
+            _score = _score + newScore;
         }
 	}
 }
