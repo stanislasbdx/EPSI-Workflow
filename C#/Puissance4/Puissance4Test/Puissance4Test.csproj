@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Connect4\Connect4.csproj" />
+    <ProjectReference Include="..\Puissance4\Puissance4.csproj" />
   </ItemGroup>
 
 </Project>

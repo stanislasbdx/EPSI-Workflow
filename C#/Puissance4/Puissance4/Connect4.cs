@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Connect4
+namespace Puissance4
 {
-    class Connect4
+    public class Connect4
     {
         // TODO : Compléter cette classe pour implémenter les règles du puissance 4
         // Etape 1

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Connect4
+namespace Puissance4
 {
     class Program
     {
