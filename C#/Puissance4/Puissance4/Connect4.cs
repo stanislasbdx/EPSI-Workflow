@@ -48,6 +48,7 @@ namespace Puissance4
 			activePlayer = activePlayer == 1 ? 2 : 1;
 
 			_checkVert(column);
+			_checkHor();
 		}
 
         // Etape 4 
@@ -66,22 +67,50 @@ namespace Puissance4
 			for (var i = 0; i <= LineCount; i++)
 			{
 				if(i >= _board[col].Count) break;
-                else
+
+				if (_board[col][i] == char.Parse("x"))
 				{
-                    if (_board[col][i] == char.Parse("x"))
-                    {
-						consecutiveO = 0;
-                        consecutiveX++;
-                    }
-					if (_board[col][i] == char.Parse("o"))
-					{
-						consecutiveX = 0;
-						consecutiveO++;
-					}
-                }
+					consecutiveO = 0;
+					consecutiveX++;
+				}
+				if (_board[col][i] == char.Parse("o"))
+				{
+					consecutiveX = 0;
+					consecutiveO++;
+				}
 
                 if(consecutiveO == 4) _endGame(1);
                 else if(consecutiveX == 4) _endGame(2);
+			}
+		}
+
+		private void _checkHor()
+		{
+			int consecutiveO = 0;
+			int consecutiveX = 0;
+
+			for (var line = 0; line <= LineCount; line++)
+			{
+				for (var col = 0; col < ColCount; col++)
+				{
+					if(_board[col].Count <= line) continue;
+					else
+					{
+						if (_board[col][line] == char.Parse("x"))
+						{
+							consecutiveO = 0;
+							consecutiveX++;
+						}
+						if (_board[col][line] == char.Parse("o"))
+						{
+							consecutiveX = 0;
+							consecutiveO++;
+						}
+					}
+
+					if (consecutiveO == 4) _endGame(1);
+					else if (consecutiveX == 4) _endGame(2);
+				}
 			}
 		}
     }
