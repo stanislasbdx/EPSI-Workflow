@@ -8,42 +8,54 @@ namespace Puissance4
         {
             var game = new Connect4();
 
-            do
+           do
             {
                 Display(game);
                 for (; ; )
                 {
-                    Console.WriteLine($"Player {game.PlayerNumber} : Which column 1-{game.ColCount} ?");
+                    Console.WriteLine($"Player {game.activePlayer} : Which column 1-{game.ColCount} ?");
 
                     var turn = Console.ReadLine();
                     int column;
 
                     if (int.TryParse(turn, out column))
-                    {
-                        game.Play(column);
-                        break;
+					{
+                        if(column > game.ColCount || column < 1)
+                        {
+							Console.Error.WriteLine("Number out of bounds.");
+                        }
+                        else
+						{
+							game.Play(column - 1);
+							break;
+                        }
+					}
+                    else
+					{
+						Console.Error.WriteLine("Invalid column number.");
                     }
-                    Console.Error.WriteLine("Invalid column number.");
                 }
             }
-            while (!game.Ended);
+            while (!game.ended);
+            
             Display(game);
-            if(game.Winner == 0)
+
+            if(game.winner == 0)
             {
                 Console.WriteLine("Draw");
             }
             else
             {
-                Console.WriteLine($"Player {game.Winner} wins.");
+                Console.WriteLine($"Player {game.winner} wins.");
             }
         }
         private static void Display(Connect4 game)
         {
-            for (int y = 0; y < game.LineCount; y++)
+			for (int y = game.LineCount; y >= 0; y--)
             {
                 for (int x = 0; x < game.ColCount; x++)
                 {
-                    Console.Write($"| {game.GetPawn(x, y)} ");
+					Console.Write($"| {game.GetPawn(x, y)} ");
                 }
                 Console.WriteLine("|");
                 for (int x = 0; x < game.ColCount; x++)
