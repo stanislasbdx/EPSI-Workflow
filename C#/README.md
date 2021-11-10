@@ -3,7 +3,7 @@
 ## Commandes de base
 
 ### Pour créer un projet
-```dotnet new --name <nom>```
+```dotnet new console --name <nom>```
 
 ### Pour ajouter un projet référence à son projet
 ```dotnet add reference <fichier.csproj>```
