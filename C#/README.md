@@ -11,6 +11,9 @@
 ### Pour lancer son projet
 ```dotnet run```
 
+### Pour lancer un test
+```dotnet test```
+
 ## Extensions VSCode
 
 ### .NET Install Tool for Extension Authors
