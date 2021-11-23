@@ -3,13 +3,16 @@
 ## Commandes de base
 
 ### Pour créer un projet
-```dotnet new --name <nom>```
+```dotnet new console --name <nom>```
 
 ### Pour ajouter un projet référence à son projet
 ```dotnet add reference <fichier.csproj>```
 
 ### Pour lancer son projet
 ```dotnet run```
+
+### Pour lancer un test
+```dotnet test```
 
 ## Extensions VSCode
 
