@@ -1,49 +1,32 @@
-def fillBoard(spacing):
-    top = [ 
-        [ ('R', 1), ('N', 1), ('B', 1), ('Q', 1), ('K', 1), ('B', 1), ('N', 1), ('B', 1) ],
-        [ ('P', 1), ('P', 1), ('P', 1), ('P', 1), ('P', 1), ('P', 1), ('P', 1), ('P', 1) ]
-    ]
-    bottom = [ 
-        [ ('P', 0), ('P', 0), ('P', 0), ('P', 0), ('P', 0), ('P', 0), ('P', 0), ('P', 0) ],
-        [ ('R', 0), ('N', 0), ('B', 0), ('Q', 0), ('K', 0), ('B', 0), ('N', 0), ('B', 0) ]
-    ]
+from Pions import *
+from Plateau import *
 
-    space = []
-    for i in range(spacing):
-        space.append([ (''), (''), (''), (''), (''), (''), (''), ('') ])
+TAILLE = 8
+THEME_CLAIR = 0
+CASES = [" ", "█"]
 
-    board = [top, space, bottom];
+def interligne(ligne, motif0, motif1):
+    return "  " + 4 * (motif0 * 4 + motif1 * 4) if ligne%2 == 0 \
+    else "  " + 4 * (motif1 * 4 + motif0 * 4)
 
-    print(board)
+Pions = Pions(8)
 
-def generateBoard():
-    def replaceChar(char):
-        newChar = char.replace("qsd", "qd")
+Plateau = Plateau(Pions)
+echiquier = Plateau.get_echiquier()
 
-        return newChar
-    
-    print("      ▄▄▄▄    ▄▄▄▄    ▄▄▄▄    ▄▄▄▄")
-    print("8  ♜  █♞ █ ♝  █♛ █ ♚  █♝ █ ♞  █♜ █")
-    print("  ▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀")
-    print("7 █♟︎ █ ♟︎  █♟︎ █ ♟︎  █♟︎ █ ♟︎  █♟︎ █ ♟︎  ")
-    print("  ▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄")
-    print("6     ████    ████    ████    ████")
-    print("  ▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀")
-    print("5 ████    ████    ████    ████")
-    print("  ▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄")
-    print("4     ████    ████    ████    ████")
-    print("  ▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀")
-    print("3 ████    ████    ████    ████")
-    print("  ▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄")
-    print("2  ♙  █♙ █ ♙  █♙ █ ♙  █♙ █ ♙  █♙ █")
-    print("  ▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀▄▄▄▄▀▀▀▀")
-    print("1 █♖ █ ♘  █♗ █ ♕  █♔ █ ♗  █♘ █ ♖  ")
-    print("  ▀▀▀▀    ▀▀▀▀    ▀▀▀▀    ▀▀▀▀")
-    print("   A   B   C   D   E   F   G   H")
-
-
-
-
-fillBoard(4)
-
-generateBoard()
+sep = interligne(THEME_CLAIR, "▄", " ")
+for y in reversed(range(TAILLE)):
+    print(sep)
+    ligne = f"{y+1} "
+    for x in range(TAILLE):
+        fond = (x + y + THEME_CLAIR) % 2
+        bord = CASES[fond]
+        if echiquier[y][x][0] == '':
+            ligne += bord*4
+        else:
+            lettre, couleur = echiquier[y][x]
+            print((THEME_CLAIR + couleur) % 2)
+            ligne += bord + Pions.get_pieces[(THEME_CLAIR + couleur) % 2][lettre] + " " + bord
+    print(ligne)
+    sep = interligne(y + THEME_CLAIR, "▄", "▀")
+print(interligne(TAILLE + THEME_CLAIR, " ", "▀"))
