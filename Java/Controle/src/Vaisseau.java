@@ -19,10 +19,15 @@ public class Vaisseau extends Vehicule {
 		nbMaximumPassager = 10;
 	}
 
-	public Vaisseau(Creature capitaine, List<Creature> passagers, int nbMaximumPassager) {
+	public Vaisseau(Creature capitaine, List<Creature> passagers, int nbMaximumPassager, int nbCapsulesDeSecour) {
 		this.capitaine = capitaine;
 		this.passagers = passagers;
 		this.nbMaximumPassager = nbMaximumPassager;
+
+		this.capsulesDeSecour = new ArrayList<CapsuleDeSecour>();
+		for (int i = 0; i < nbCapsulesDeSecour; i++) {
+			this.capsulesDeSecour.add(new CapsuleDeSecour());
+		}
 	}
 
 	public boolean ajouterPassager(Creature creature) {
