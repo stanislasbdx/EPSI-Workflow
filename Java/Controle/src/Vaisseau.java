@@ -10,14 +10,13 @@ public class Vaisseau extends Vehicule {
 	public Vaisseau() {
 		capitaine = new Creature("Castaybert Stanislas", Race.HUMAIN, 42);
 
-		CapsuleDeSecour cap1 = new CapsuleDeSecour();
-		cap1.nbMaximumPassager = 10;
+		passagers = new ArrayList<Creature>();
 
-		CapsuleDeSecour cap2 = new CapsuleDeSecour();
+		capsulesDeSecour = new ArrayList<>();
+		capsulesDeSecour.add(new CapsuleDeSecour());
+		capsulesDeSecour.add(new CapsuleDeSecour());
 
-		capsulesDeSecours = new ArrayList<>();
-		capsulesDeSecours.add(cap1);
-		capsulesDeSecours.add(cap2);
+		nbMaximumPassager = 10;
 	}
 
 	public Vaisseau(Creature capitaine, List<Creature> passagers, int nbMaximumPassager) {
