@@ -46,7 +46,7 @@ public class Vaisseau extends Vehicule {
 		passagers.add(creature);
 	}
 
-	public boolean ajouterPassagerCapsuleSecours() {
+	public boolean ajouterPassagerCapsuleSecour() {
 		Creature addedPassenger = passagers.get(0);
 		CapsuleDeSecour capsuleDeSecour = capsulesDeSecour.get(0);
 
