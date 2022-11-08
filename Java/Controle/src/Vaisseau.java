@@ -48,15 +48,24 @@ public class Vaisseau extends Vehicule {
 
 	public boolean ajouterPassagerCapsuleSecour() {
 		Creature addedPassenger = passagers.get(0);
-		CapsuleDeSecour capsuleDeSecour = capsulesDeSecour.get(0);
+		boolean isAdded = false;
 
-		if(addedPassenger == null || capsuleDeSecour == null || capsuleDeSecour.passagers.size() >= capsuleDeSecour.nbMaximumPassager)
+		if(addedPassenger == null || capsulesDeSecour.size() == 0) {
 			return false;
-		else {
-			capsuleDeSecour.ajouterPassager(addedPassenger);
-			passagers.remove(0);
-
-			return true;
 		}
+		else {
+			for (CapsuleDeSecour capsuleDeSecour : this.capsulesDeSecour) {
+
+				if(capsuleDeSecour.passagers.size() >= capsuleDeSecour.nbMaximumPassager) {
+					capsuleDeSecour.ajouterPassager(addedPassenger);
+					passagers.remove(0);
+
+					isAdded = true;
+				}
+
+			}
+		}
+
+		return isAdded;
 	}
 }
