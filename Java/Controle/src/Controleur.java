@@ -16,6 +16,7 @@ public class Controleur {
 
 		if (vaisseau.passagers.size() > vaisseau.nbMaximumPassager) {
 			System.out.println("Je sais pas faire beaucoup de maths, mais il me semble bien que vous êtes trop");
+			passengerChecking = false;
 		}
 
 		int klackons = 0;
@@ -45,6 +46,7 @@ public class Controleur {
 
 		if(humans % 2 != 0) {
 			System.out.println("Bon, je peux vous compter sur les doigts d'une main impair, ça n'a pas de sens, descendez.");
+			passengerChecking = false;
 		}
 
 		return passengerChecking;
