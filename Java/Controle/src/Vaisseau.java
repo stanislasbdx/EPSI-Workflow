@@ -4,7 +4,7 @@ import java.util.List;
 public class Vaisseau extends Vehicule {
 	public Creature capitaine;
 	public List<Creature> passagers;
-	public List<CapsuleDeSecour> capsulesDeSecours;
+	public List<CapsuleDeSecour> capsulesDeSecour;
 	public int nbMaximumPassager;
 
 	public Vaisseau() {
@@ -44,7 +44,7 @@ public class Vaisseau extends Vehicule {
 
 	public boolean ajouterPassagerCapsuleSecours() {
 		Creature addedPassenger = passagers.get(0);
-		CapsuleDeSecour capsuleDeSecour = capsulesDeSecours.get(0);
+		CapsuleDeSecour capsuleDeSecour = capsulesDeSecour.get(0);
 
 		if(addedPassenger == null || capsuleDeSecour == null || capsuleDeSecour.passagers.size() >= capsuleDeSecour.nbMaximumPassager)
 			return false;
