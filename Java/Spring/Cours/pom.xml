@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.stan1712.epsi</groupId>
-	<artifactId>spring</artifactId>
+	<artifactId>cours</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring</name>
 	<description>Spring initiation @ EPSI</description>

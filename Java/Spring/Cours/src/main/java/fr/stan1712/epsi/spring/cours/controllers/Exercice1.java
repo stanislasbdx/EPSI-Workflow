@@ -1,4 +1,4 @@
-package fr.stan1712.epsi.spring.controllers;
+package fr.stan1712.epsi.spring.cours.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +20,7 @@ public class Exercice1 {
 		return "ceci est une chaîne de caractères";
 	}
 
+	
 
 	static class Fruit {
 		private int nbre = 42;

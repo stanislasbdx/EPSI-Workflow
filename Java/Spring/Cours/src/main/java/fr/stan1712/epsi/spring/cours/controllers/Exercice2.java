@@ -1,6 +1,6 @@
-package fr.stan1712.epsi.spring.controllers;
+package fr.stan1712.epsi.spring.cours.controllers;
 
-import fr.stan1712.epsi.spring.models.User;
+import fr.stan1712.epsi.spring.cours.models.User;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

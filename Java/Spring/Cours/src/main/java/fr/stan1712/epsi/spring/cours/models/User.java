@@ -1,4 +1,4 @@
-package fr.stan1712.epsi.spring.models;
+package fr.stan1712.epsi.spring.cours.models;
 
 import lombok.Getter;
 import lombok.Setter;
