@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HelloWorld</string>
+    <string name="btn_nature_text">Nature</string>
+    <string name="main_title">EPSI</string>
 </resources>
