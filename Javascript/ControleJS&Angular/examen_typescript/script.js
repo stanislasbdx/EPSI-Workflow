@@ -9,16 +9,33 @@ examDiv.style.margin = "auto";
 examDiv.style.background = "white";
 hwTitle.style.textAlign = "center";
 hwTitle.style.fontFamily = "Helvetica";
-function clickDiv() {
+/*
+    ? Partie 2 :
+
+    function clickDiv() {
     const divBgColor = bodyStyle.background;
+
     if (divBgColor === "black") {
         bodyStyle.background = "white";
         examDiv.style.background = "black";
         hwTitle.style.color = "white";
-    }
-    else if (divBgColor === "white") {
+    } else if (divBgColor === "white") {
         bodyStyle.background = "black";
         examDiv.style.background = "white";
         hwTitle.style.color = "black";
     }
+}*/
+function clickDiv() {
+    const divBgColor = bodyStyle.background;
+    invertColors(divBgColor);
+}
+/**
+ * Invert colors from a previous one
+ * @param prevColor Previous color used
+ */
+function invertColors(prevColor) {
+    const newColor = prevColor === "white" ? "black" : "white";
+    bodyStyle.background = newColor;
+    examDiv.style.background = prevColor;
+    hwTitle.style.color = newColor;
 }
