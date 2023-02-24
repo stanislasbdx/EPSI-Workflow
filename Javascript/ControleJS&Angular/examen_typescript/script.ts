@@ -65,18 +65,16 @@ class Page {
 		this._title = document.getElementsByTagName("h1")[0]! as HTMLElement;
 		this._body = document.body;
 
-
 		this._body.style.background = "black";
-
-		this._div.style.width = "450px";
-		this._div.style.height = "450px";
-		this._div.style.margin = "auto";
-		this._div.style.background = "white";
 
 		this._title.style.textAlign = "center";
 		this._title.style.fontFamily = "Helvetica";
 		this._title.style.background = "white";
 
+		this._div.style.width = "450px";
+		this._div.style.height = "450px";
+		this._div.style.margin = "auto";
+		this._div.style.background = "white";
 
 		this._div.addEventListener("click", () => {
 			this.InvertColors(this._body);
