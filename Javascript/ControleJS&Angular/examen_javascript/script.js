@@ -1,3 +1,5 @@
+"use strict";
+
 const examDiv = document.getElementById("exam-div");
 const hwTitle = document.getElementsByTagName("h1")[0];
 const bodyStyle = document.body.style;
@@ -19,8 +21,7 @@ function clickDiv() {
 		bodyStyle.background = "white";
 		examDiv.style.background = "black";
 		hwTitle.style.color = "white";
-	}
-	else if (divBgColor === "white") {
+	} else if (divBgColor === "white") {
 		bodyStyle.background = "black";
 		examDiv.style.background = "white";
 		hwTitle.style.color = "black";
