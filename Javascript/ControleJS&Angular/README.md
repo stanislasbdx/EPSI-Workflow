@@ -1,9 +1,13 @@
 # Examen Javascript et Framework JS
 
-## Ladrat Geoffroy
-
---
-
 ## Sujet
 
-<https://gl-conseil.dev/examen_js_24/>
+👨‍🏫 Formateur: Ladrat Geoffroy
+
+🔗 Lien: <https://gl-conseil.dev/examen_js_24/>
+
+---
+
+## Repo
+
+<https://github.com/stanislasbdx/EPSI-Workflow/tree/master/Javascript/ControleJS%26Angular>
