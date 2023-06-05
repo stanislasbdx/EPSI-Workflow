@@ -1,0 +1,103 @@
+/* Couleurs */
+:root {
+    --primary-color: #3467eb;
+    --secondary-color: #ffffff;
+    --glass-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(52, 103, 235, 0.4);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Permet de positionner les formes */
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.subtitle {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.form {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Permet de positionner les formes */
+    z-index: 1; /* Met le formulaire au-dessus des formes */
+}
+
+.form label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.form .input-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form .input-group .input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+
+.form .button-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+/* Effet de Glassmorphism */
+.form {
+    background-color: var(--glass-color);
+    backdrop-filter: blur(10px);
+}
+
+.input {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--glass-color);
+}
+
+.button {
+    background-color: var(--glass-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="glassmorphism.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Bibliothèque</title>
+</head>
+
+<body>
+<div class="container">
+    <!-- Formulaire pour les livres -->
+    <h2 class="subtitle">Gestion des livres</h2>
+    <form class="form">
+        <div class="input-group">
+            <div>
+                <label for="bookTitle">Titre du livre:</label>
+                <input type="text" id="bookTitle" class="input" required>
+            </div>
+            <div>
+                <label for="bookAuthor">Auteur:</label>
+                <input type="text" id="bookAuthor" class="input" required>
+            </div>
+            <div>
+                <label for="bookPublicationDate">Date de parution:</label>
+                <input type="date" id="bookPublicationDate" class="input" required>
+            </div>
+            <div>
+                <label for="bookPages">Nombre de pages:</label>
+                <input type="number" id="bookPages" class="input" required>
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button">Ajouter</button>
+        </div>
+    </form>
+
+    <!-- Formulaire pour les auteurs -->
+    <h2 class="subtitle">Gestion des auteurs</h2>
+    <form class="form">
+        <div class="input-group">
+            <div>
+                <label for="authorFirstName">Prénom:</label>
+                <input type="text" id="authorFirstName" class="input" required>
+            </div>
+            <div>
+                <label for="authorLastName">Nom:</label>
+                <input type="text" id="authorLastName" class="input" required>
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button">Ajouter</button>
+        </div>
+    </form>
+
+    <!-- Formulaire pour les catégories -->
+    <h2 class="subtitle">Gestion des catégories</h2>
+    <form class="form">
+        <div class="input-group">
+            <div>
+                <label for="categoryName">Nom de la catégorie:</label>
+                <input type="text" id="categoryName" class="input" required>
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button">Ajouter</button>
+        </div>
+    </form>
+
+    <!-- Formulaire pour les adhérents -->
+    <h2 class="subtitle">Gestion des adhérents</h2>
+    <form class="form">
+        <div class="input-group">
+            <div>
+                <label for="memberFirstName">Prénom:</label>
+                <input type="text" id="memberFirstName" class="input" required>
+            </div>
+            <div>
+                <label for="memberLastName">Nom:</label>
+                <input type="text" id="memberLastName" class="input" required>
+            </div>
+            <div>
+                <label for="memberEmail">Email:</label>
+                <input type="email" id="memberEmail" class="input" required>
+            </div>
+            <div>
+                <label for="memberRegistrationDate">Date d'inscription:</label>
+                <input type="date" id="memberRegistrationDate" class="input" required>
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button">Ajouter</button>
+        </div>
+    </form>
+
+    <!-- Formulaire pour les emprunts -->
+    <h2 class="subtitle">Gestion des emprunts</h2>
+    <form class="form">
+        <div class="input-group">
+            <div>
+                <label for="borrowerName">Nom de l'emprunteur:</label>
+                <input type="text" id="borrowerName" class="input" required>
+            </div>
+            <div>
+                <label for="borrowedBook">Livre emprunté:</label>
+                <select id="borrowedBook" class="input" required>
+                    <option value="">Sélectionner un livre</option>
+                    <!-- Ajouter les options dynamiquement depuis la base de données -->
+                </select>
+            </div>
+            <div>
+                <label for="borrowDate">Date d'emprunt:</label>
+                <input type="date" id="borrowDate" class="input" required>
+            </div>
+            <div>
+                <label for="returnDate">Date de retour prévue:</label>
+                <input type="date" id="returnDate" class="input" required>
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="button">Ajouter</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
