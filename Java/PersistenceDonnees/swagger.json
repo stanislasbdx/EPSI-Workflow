@@ -1,0 +1,511 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API de gestion des livres",
+    "version": "1.0.0",
+    "description": "API pour gérer les livres, les auteurs, les catégories, et les emprunts"
+  },
+  "paths": {
+    "/livres": {
+      "get": {
+        "summary": "Récupérer tous les livres",
+        "responses": {
+          "200": {
+            "description": "Liste des livres récupérée avec succès"
+          }
+        }
+      },
+      "post": {
+        "summary": "Créer un nouveau livre",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LivreEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Livre créé avec succès"
+          }
+        }
+      }
+    },
+    "/livres/{id}": {
+      "get": {
+        "summary": "Récupérer un livre par ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Livre récupéré avec succès"
+          },
+          "404": {
+            "description": "Livre non trouvé"
+          }
+        }
+      },
+      "put": {
+        "summary": "Mettre à jour un livre",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LivreEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Livre mis à jour avec succès"
+          },
+          "404": {
+            "description": "Livre non trouvé"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Supprimer un livre",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Livre supprimé avec succès"
+          },
+          "404": {
+            "description": "Livre non trouvé"
+          }
+        }
+      }
+    },
+    "/auteurs": {
+      "get": {
+        "summary": "Récupérer tous les auteurs",
+        "responses": {
+          "200": {
+            "description": "Liste des auteurs récupérée avec succès"
+          }
+        }
+      },
+      "post": {
+        "summary": "Créer un nouvel auteur",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuteurEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Auteur créé avec succès"
+          }
+        }
+      }
+    },
+    "/auteurs/{id}": {
+      "get": {
+        "summary": "Récupérer un auteur par ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auteur récupéré avec succès"
+          },
+          "404": {
+            "description": "Auteur non trouvé"
+          }
+        }
+      },
+      "put": {
+        "summary": "Mettre à jour un auteur",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuteurEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Auteur mis à jour avec succès"
+          },
+          "404": {
+            "description": "Auteur non trouvé"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Supprimer un auteur",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Auteur supprimé avec succès"
+          },
+          "404": {
+            "description": "Auteur non trouvé"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "summary": "Récupérer toutes les catégories",
+        "responses": {
+          "200": {
+            "description": "Liste des catégories récupérée avec succès"
+          }
+        }
+      },
+      "post": {
+        "summary": "Créer une nouvelle catégorie",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Catégorie créée avec succès"
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "summary": "Récupérer une catégorie par ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Catégorie récupérée avec succès"
+          },
+          "404": {
+            "description": "Catégorie non trouvée"
+          }
+        }
+      },
+      "put": {
+        "summary": "Mettre à jour une catégorie",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Catégorie mise à jour avec succès"
+          },
+          "404": {
+            "description": "Catégorie non trouvée"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Supprimer une catégorie",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Catégorie supprimée avec succès"
+          },
+          "404": {
+            "description": "Catégorie non trouvée"
+          }
+        }
+      }
+    },
+    "/emprunts": {
+      "get": {
+        "summary": "Récupérer tous les emprunts",
+        "responses": {
+          "200": {
+            "description": "Liste des emprunts récupérée avec succès"
+          }
+        }
+      },
+      "post": {
+        "summary": "Créer un nouvel emprunt",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpruntEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Emprunt créé avec succès"
+          }
+        }
+      }
+    },
+    "/emprunts/{id}": {
+      "get": {
+        "summary": "Récupérer un emprunt par ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Emprunt récupéré avec succès"
+          },
+          "404": {
+            "description": "Emprunt non trouvé"
+          }
+        }
+      },
+      "put": {
+        "summary": "Mettre à jour un emprunt",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpruntEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Emprunt mis à jour avec succès"
+          },
+          "404": {
+            "description": "Emprunt non trouvé"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Supprimer un emprunt",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Emprunt supprimé avec succès"
+          },
+          "404": {
+            "description": "Emprunt non trouvé"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LivreEntity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "titre": {
+            "type": "string"
+          },
+          "auteur": {
+            "type": "string"
+          },
+          "categorie": {
+            "type": "string"
+          },
+          "datePublication": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "AuteurEntity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nationalite": {
+            "type": "string"
+          },
+          "dateNaissance": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "CategorieEntity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "libelle": {
+            "type": "string"
+          }
+        }
+      },
+      "EmpruntEntity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "livre": {
+            "type": "string"
+          },
+          "dateEmprunt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateRetour": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}
