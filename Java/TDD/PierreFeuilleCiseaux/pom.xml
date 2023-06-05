@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.epsi</groupId>
-	<artifactId>PierreFeuilleCiseaux</artifactId>
+	<artifactId>ControleTDD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PierreFeuilleCiseaux</name>
-	<description>Demo project for PierreFeuilleCiseaux</description>
+	<name>ControleTDD</name>
+	<description>Demo project for ControleTDD</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -1,13 +1,13 @@
-package com.epsi.RPS;
+package com.epsi.controleTDD;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RPSApplication {
+public class TDDApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RPSApplication.class, args);
+		SpringApplication.run(TDDApplication.class, args);
 	} 
 
 }

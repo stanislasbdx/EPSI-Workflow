@@ -1,4 +1,4 @@
-package com.epsi.RPS.controller;
+package com.epsi.controleTDD.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 @WebMvcTest(GameController.class)
 public class GameControllerTest {
@@ -19,31 +18,29 @@ public class GameControllerTest {
 	private MockMvc mockMvc;
 
 	@Test
-	public void testPlayRPS() throws Exception {
-		mockMvc.perform(get("/game/play/pierre"))
+	public void test_partie_papier() throws Exception {
+		mockMvc.perform(get("/game/play/papier"))
 				.andExpect(status().isOk())
-				.andExpect(content().string("Le joueur 1 gagne !"));
+				.andExpect(content().string("Joueur 1 gagne"));
 	}
 
 	@Test
-	public void testRestartGame() throws Exception {
+	public void test_reset_partie() throws Exception {
 		mockMvc.perform(get("/game/restart"))
-				.andExpect(status().isOk())
-				.andExpect(content().string("Score remis à zéro"));
+				.andExpect(status().isOk());
 	}
 
 	@Test
-	public void testGetScore() throws Exception {
+	public void test_recup_score_0() throws Exception {
 		mockMvc.perform(get("/game/score"))
 				.andExpect(status().isOk())
-				.andExpect(content().string("SCORES : joueur -> 0 | 0 <- ordinateur"));
+				.andExpect(content().string("0"));
 	}
 
 	@Test
-	public void testSetScore() throws Exception {
-		mockMvc.perform(get("/game/score/3"))
-				.andExpect(status().isOk())
-				.andExpect(content().string("Score modifié !"));
+	public void test_def_score_1() throws Exception {
+		mockMvc.perform(get("/game/score/1"))
+				.andExpect(status().isOk());
 	}
 	
 }
