@@ -1,0 +1,5 @@
+package fr.epsi;
+
+public enum Operation {
+	ADD, SUBTRACT, MULTIPLY, DIVIDE
+}
